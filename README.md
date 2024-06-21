@@ -1,56 +1,56 @@
 ---
 
-# Sistema Transaccional Banco De Los Andes
+# Banco De Los Andes Transactional System
 
-## Descripción General
-Este proyecto implementa un sistema transaccional para el Banco De Los Andes, diseñado para gestionar eficientemente las operaciones bancarias, asegurando la integridad, seguridad y escalabilidad de los datos. Se desarrolló como parte del curso de Sistemas Transaccionales en la Universidad de los Andes.
+## General Description
+This project implements a transactional system for the Banco De Los Andes, designed to efficiently manage banking operations, ensuring the integrity, security, and scalability of the data. It was developed as part of the Transactional Systems course at the Universidad de los Andes.
 
-## Integrantes
+## Members
 - Laura Valentina Ceron Pulgarin - 202214973 (l.ceronp@uniandes.edu.co)
 - Franklin Smith Fernandez Romero - 202215103 (f.fernandezr@uniandes.edu.co)
-- Andres Mateo Chilito Avella - 202214992 (a.chilitoa@uniandes.edu.co) 
+- Andres Mateo Chilito Avella - 202214992 (a.chilitoa@uniandes.edu.co)
 
-## Características
-- **Modelo Conceptual UML**: Diseño de entidades como Usuarios, Cuentas, Préstamos y Operaciones Bancarias, mostrando una arquitectura de sistema flexible e intuitiva.
-- **Modelo Entidad-Relación (E/R)**: Representación detallada del esquema de base de datos, asegurando la integridad de los datos a través de relaciones y restricciones adecuadas.
-- **Modelo de Datos**: Detalles de implementación para diversas entidades, incluyendo restricciones de clave primaria y extranjera.
-- **Niveles de Normalización**: Se explica cómo el diseño de la base de datos se adhiere a estándares de normalización hasta la Forma Normal de Boyce-Codd (BCNF), asegurando un almacenamiento de datos eficiente sin redundancias.
-- **Medidas de Seguridad y Privacidad**: Enfatiza la privacidad de los datos y la integridad operacional, con reglas específicas para roles de usuarios, manejo de cuentas y validaciones de transacciones.
+## Features
+- **UML Conceptual Model**: Design of entities such as Users, Accounts, Loans, and Banking Operations, showing a flexible and intuitive system architecture.
+- **Entity-Relationship (E/R) Model**: Detailed representation of the database schema, ensuring data integrity through appropriate relationships and constraints.
+- **Data Model**: Implementation details for various entities, including primary and foreign key constraints.
+- **Normalization Levels**: Explains how the database design adheres to normalization standards up to the Boyce-Codd Normal Form (BCNF), ensuring efficient data storage without redundancies.
+- **Security and Privacy Measures**: Emphasizes data privacy and operational integrity, with specific rules for user roles, account management, and transaction validations.
 
-## Prerrequisitos
-- Sistema de Gestión de Base de Datos SQL (DBMS)
+## Prerequisites
+- SQL Database Management System (DBMS)
 
-## Configuración e Instalación
-1. Instalar un Sistema de Gestión de Base de Datos SQL compatible.
-2. Configurar el esquema de base de datos utilizando los scripts proporcionados en el directorio `/db`.
+## Setup and Installation
+1. Install a compatible SQL Database Management System.
+2. Configure the database schema using the scripts provided in the `/db` directory.
 
-## Uso
-Para utilizar el sistema, si dispone del complemento de Spring en su entorno de desarrollo, le recomendamos acceder al archivo de propiedades de la aplicación y configurar sus credenciales según las especificaciones proporcionadas. Posteriormente, puede ejecutar la aplicación utilizando las herramientas proporcionadas por el entorno de desarrollo integrado.
+## Usage
+To use the system, if you have the Spring plugin in your development environment, we recommend accessing the application properties file and configuring your credentials according to the provided specifications. Afterwards, you can run the application using the tools provided by the integrated development environment.
 
-En el caso de no contar con el complemento de Spring, puede ejecutar la clase 'AplicacionBanco' directamente desde su IDE o utilizando las herramientas de compilación proporcionadas, asegurándose de tener todas las dependencias necesarias y la configuración adecuada para su correcto funcionamiento.
+If you do not have the Spring plugin, you can run the 'AplicacionBanco' class directly from your IDE or using the provided build tools, ensuring that you have all the necessary dependencies and the correct configuration for proper operation.
 
-Recuerde que es fundamental seguir las buenas prácticas de seguridad y gestión de configuraciones para garantizar un despliegue adecuado y seguro de la aplicación.
+Remember that it is essential to follow good security and configuration management practices to ensure a proper and secure deployment of the application.
 
-## Pruebas
-Para asegurar la calidad tanto del código de la página web del banco como de su base de datos, se llevaron a cabo  pruebas a lo largo de todo el proceso de desarrollo. Estas pruebas abarcaron diferentes aspectos, incluyendo pruebas de unidad, pruebas de integración y pruebas de aceptación.
+## Testing
+To ensure the quality of both the bank's website code and its database, tests were carried out throughout the development process. These tests covered different aspects, including unit tests, integration tests, and acceptance tests.
 
-En las pruebas de unidad, se evaluaron individualmente cada componente del código para verificar su correcto funcionamiento según las especificaciones. Se utilizaron herramientas de pruebas automatizadas para garantizar una cobertura exhaustiva de todos los casos posibles. (Aunque existen algunos fallos pequeños que no se encuentran dentro de los RF).
+In unit tests, each code component was individually evaluated to verify its correct functioning according to the specifications. Automated testing tools were used to ensure comprehensive coverage of all possible cases. (Although there are some minor failures that are not within the RF).
 
-Las pruebas de integración se centraron en la interacción entre los distintos componentes del sistema, asegurando que trabajaran de manera conjunta de manera eficiente y sin conflictos. Se realizaron pruebas de extremo a extremo para simular situaciones reales de uso y verificar la funcionalidad del sistema en su totalidad.
+Integration tests focused on the interaction between the different system components, ensuring that they worked together efficiently and without conflicts. End-to-end tests were conducted to simulate real-use situations and verify the functionality of the system as a whole.
 
-Además, se llevaron a cabo pruebas de rendimiento y seguridad para evaluar la capacidad del sistema para manejar cargas de trabajo elevadas y proteger los datos confidenciales de los usuarios.
+Additionally, performance and security tests were conducted to evaluate the system's ability to handle high workloads and protect the confidential data of users.
 
-Por último, se realizaron pruebas de aceptación con usuarios reales o simulados para validar que la aplicación cumplía con los requisitos del cliente y ofrecía una experiencia satisfactoria para los usuarios finales.
+Finally, acceptance tests were conducted with real or simulated users to validate that the application met the client's requirements and provided a satisfactory experience for the end users.
 
-El proceso de pruebas se llevó a cabo de manera iterativa a lo largo del ciclo de desarrollo, permitiendo identificar y corregir cualquier problema o defecto de manera oportuna. Esto garantizó que tanto la página web del banco como su base de datos cumplieran con los RF necesarios.
+The testing process was carried out iteratively throughout the development cycle, allowing for the timely identification and correction of any problems or defects. This ensured that both the bank's website and its database met the necessary RF.
 
-## Contribuciones
-Las contribuciones a este proyecto son bienvenidas. Por favor, lea nuestras pautas de contribución para más detalles sobre cómo proponer mejoras, informar errores o enviar solicitudes de extracción.
+## Contributions
+Contributions to this project are welcome. Please read our contribution guidelines for more details on how to propose improvements, report bugs, or submit pull requests.
 
-## Licencia
-Este proyecto se publica bajo la licencia MIT, que permite la reutilización con pocas restricciones.
+## License
+This project is released under the MIT license, which allows reuse with few restrictions.
 
-## Agradecimientos
-Agradecemos a la Universidad de los Andes por proporcionar el marco académico y los recursos necesarios para el desarrollo de este proyecto, especialmente al profesor y monitora que fueron clave en el desarrollo.
+## Acknowledgments
+We thank the Universidad de los Andes for providing the academic framework and necessary resources for the development of this project, especially the professor and monitor who were key in the development.
 
 ---
