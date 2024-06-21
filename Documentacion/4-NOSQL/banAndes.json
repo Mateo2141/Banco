@@ -1,0 +1,69 @@
+{
+  "usuarios": [
+    {
+      "_id": "ObjectId",
+      "nombre": "String",
+      "contraseña": "String",
+      "clienteId": "ObjectId",  // Referencia a cliente
+      "empleadoId": "ObjectId"  // Referencia a empleado
+    }
+  ],
+  "clientes": [
+    {
+      "_id": "ObjectId",
+      "persona": "String",  // natural, juridica
+      "cuentas": [
+        "ObjectId"  // Referencia a cuenta
+      ]
+    }
+  ],
+  "empleados": [
+    {
+      "_id": "ObjectId",
+      "tipo": "String",  // cajero, gerente_oficina, gerente_general
+      "oficinaId": "ObjectId"  // Referencia a oficina
+    }
+  ],
+  "oficinas": [
+    {
+      "_id": "ObjectId",
+      "nombre": "String",
+      "numPuntosAtencion": "Integer",
+      "direccion": "String",
+      "horario": "Date",
+      "puntosAtencion": [
+        {
+          "_id": "ObjectId",
+          "ubicacionGeografica": "String",
+          "operacionesRealizadas": "Integer",
+          "tipo": "String"  // cajero_automatico, AppWeb
+        }
+      ]
+    }
+  ],
+  "cuentas": [
+    {
+      "_id": "ObjectId",
+      "numCuenta": "Integer",
+      "tipo": "String",  // ahorro, corriente
+      "estado": "String",  // activa, cerrada, desactivada
+      "saldo": "Float",
+      "fechaUltimaTransaccion": "Date",
+      "fechaCreacion": "Date",
+      "operaciones": [
+        "ObjectId"  // Referencia a operacion bancaria
+      ]
+    }
+  ],
+  "operaciones_bancarias": [
+    {
+      "_id": "ObjectId",
+      "monto": "Float",
+      "fecha": "Date",
+      "hora": "Time",
+      "tipoOperacion": "String",  // consignacion, retiro, transferencia, crear, cerrar
+      "cuentaId": "ObjectId",  // Referencia a cuenta
+      "puntoAtencionId": "ObjectId"  // Referencia a punto de atencion
+    }
+  ]
+}

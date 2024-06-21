@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6E699214-9AEA-CDFC-C797-D039945F1394" name="OperacionesCuenta">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:17:00 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>9FA7DEC3-F9E9-60FF-6737-8CD89FF27933</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idOperacion" id="98B68389-0914-31F2-E6B1-AE468364A6A0">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:17:12 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipoOperacion" id="96F28368-41AE-5DF0-9391-13BA3F5EB20C">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:17:31 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>C54D0684-A616-039D-60F1-E64C6750CE19</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="numCuenta" id="8ED081F0-0E15-89A8-08F0-76EFD2BC143B">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-18 06:17:01 UTC</createdTime>
+<generatorID>314C59DD-F5A6-EB0A-385A-0BEE353CADD7</generatorID>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<referedAttribute>D81E5E1D-01C0-EBB5-940A-48FF7FD847B7</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="975184DB-72A4-8425-3359-C89C23052674" name="OperacionesCuenta PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-18 06:21:59 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>98B68389-0914-31F2-E6B1-AE468364A6A0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

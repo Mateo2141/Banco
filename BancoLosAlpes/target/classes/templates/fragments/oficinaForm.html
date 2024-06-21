@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fragmento Oficina</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div th:fragment="oficinaForm(titulo, oficina)" class="container border border-2 w-50">
+        <h1 class="text-center" th:text="${titulo}"></h1>
+        <form th:object="${oficina}" th:action="@{${titulo == 'Crear Oficina' ? '/oficinas/guardar' : '/oficinas/' + oficina.id + '/guardar'}}" method="post">
+            <label class="col-form-label">Nombre:</label>
+            <input class="form-control" type="text" id="nombre" name="nombre" required th:field="*{nombre}" />
+
+            <label class="col-form-label">Numero de Puntos Atencion - maximo 50:</label>
+            <input class="form-control" type="number" id="numPuntosAtencion" name="numPuntosAtencion" required th:field="*{numPuntosAtencion}" />
+
+            <label class="col-form-label">Direccion:</label>
+            <input class="form-control" type="text" id="direccion" name="direccion" required th:field="*{direccion}" />
+
+            <label class="col-form-label" for="horario">Horario:</label>
+            <select class="form-control" id="horario" name="horario" required th:field="*{horario}">
+                <option value="LUNES_A_VIERNES">LUNES_A_VIERNES</option>
+                <option value="SABADO">SABADO</option>
+                <option value="FULL_TIME">FULL_TIME</option>
+            </select>
+
+            <div th:if="${oficina.id != null}">
+                <h2>Puntos de Atención</h2>
+                <table class="table table-hover table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Ubicación Geográfica</th>
+                            <th>Operaciones Realizadas</th>
+                            <th>Tipo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="puntoAtencion : ${oficina.puntosAtencion}">
+                            <td th:text="${puntoAtencion.id}"></td>
+                            <td th:text="${puntoAtencion.ubicacionGeografica}"></td>
+                            <td th:text="${puntoAtencion.operacionesRealizadas}"></td>
+                            <td th:text="${puntoAtencion.tipo}"></td>
+                            <td>
+                                <a th:href="@{'/oficinas/' + ${oficina.id} + '/puntosatencion/' + ${puntoAtencion.id} + '/editar'}" class="btn btn-primary btn-sm">Editar</a>
+                                <a th:href="@{'/oficinas/' + ${oficina.id} + '/puntosatencion/' + ${puntoAtencion.id} + '/borrar'}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de borrar este punto de atención?')">Borrar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a th:href="@{'/oficinas/' + ${oficina.id} + '/puntosatencion/nuevo'}" class="btn btn-primary">Añadir Punto de Atención</a>
+            </div>
+
+            <div class="text-center">
+                <input type="submit" value="Guardar" class="btn btn-primary">
+                <a th:href="@{/oficinas}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

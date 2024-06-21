@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="14273A70-5BD9-D616-94D1-6417E9DE08A5" name="Cuentas">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:11:25 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="numCuenta" id="D81E5E1D-01C0-EBB5-940A-48FF7FD847B7">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:11:30 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo" id="E73B8814-8F6B-FC81-70B6-F7C538823B0F">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:11:45 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>C559475B-0B12-7A63-0690-BA123483EB51</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="estado" id="8EDA482F-C09D-11A1-CEE8-4D59DF4A6272">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:11:54 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>350EFEBB-AB82-D10E-FD0B-78C2B285759C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="saldo" id="72E83DEF-CC5D-DD52-1686-B28BFE3A6D33">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:12:03 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaUltimaTransaccion" id="D3FAC9DF-A9D1-0997-480C-3AD5A53CFD71">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:12:22 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaCreacion" id="C7B50062-E556-114F-13AF-FDADFE43ED64">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:12:39 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="EADD11B9-9680-E84A-13AB-7CC37C6EE26B" name="Cuentas PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-18 06:16:49 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D81E5E1D-01C0-EBB5-940A-48FF7FD847B7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

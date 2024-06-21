@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/png" href="../static/images/logo.png" />
+    <title>Banco de Los Andes</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/navbar.css}" />   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" th:href='@{/}'><img th:src="@{/images/logo.png}" width="70"></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/clientes}">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/cuentas}">Cuentas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/empleados}">Empleados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/oficinas}">Oficinas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/operacionesBancarias}">Operaciones Bancarias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/operacionesCuenta}">Operaciones Cuenta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/operacionesPrestamo}">Operaciones Prestamo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/prestamos}">Prestamos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/puntosAtencion}">Puntos Atencion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container w-25">
+        <div class="card border border-2 mx-auto">
+            <h5 class="card-header" role='button' id="headingOne">
+                <a href="#" class="collapsed d-block" data-toggle="collapse" data-target="#busqueda">
+                    Búsqueda avanzada
+                </a>
+            </h5>
+            <div id="busqueda" class="collapse">
+                <form th:action="@{/cuentas/filtro}" method="get">
+
+                    <label class="col-form-label">Tipo de Cuenta:</label>
+                    <select class="form-control" id="tipoCuenta" name="tipoCuenta">
+                    <option value="">Seleccione una opción</option>
+                    <option value="AHORRO" th:selected="${param.tipoCuenta == 'AHORRO'}">AHORRO</option>
+                    <option value="CORRIENTE" th:selected="${param.tipoCuenta == 'CORRIENTE'}">CORRIENTE</option>
+                    </select>
+
+                    <label class="col-form-label">Estado de Cuenta:</label>
+                    <select class="form-control" id="estadoCuenta" name="estadoCuenta">
+                        <option value="">Seleccione una opción</option>
+                    <option value="ACTIVA" th:selected="${param.estadoCuenta == 'ACTIVA'}">ACTIVA</option>
+                    <option value="CERRADA" th:selected="${param.estadoCuenta == 'CERRADA'}">CERRADA</option>
+                    <option value="DESACTIVADA" th:selected="${param.estadoCuenta == 'DESACTIVADA'}">DESACTIVADA</option>
+                    </select>
+
+
+                    <label class="col-form-label">Saldo Mínimo:</label>
+                    <input class="form-control" type="number" id="saldo" name="saldo" />
+
+                    <label class="col-form-label">Fecha de Creación Desde:</label>
+                    <input class="form-control" type="date" id="fechaCreacion" name="fechaCreacion" />
+
+                    <label class="col-form-label">Última Transacción Antes de:</label>
+                    <input class="form-control" type="date" id="fechaUtimaTransaccion" name="fechaUtimaTransaccion" />
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-secondary">Buscar</button>
+                    </div>
+                    <br />
+                </form>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="text-center">
+        <h1>Lista de Cuentas</h1>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Número de Cuenta</th>
+                    <th>Tipo de Cuenta</th>
+                    <th>Estado de la Cuenta</th>
+                    <th>Saldo</th>
+                    <th>Última Transacción</th>
+                    <th>Fecha de Creación</th>
+                    <th>Cliente</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <th:block th:each="cuenta : ${cuentas}">
+                <tr>
+                    <td th:text="${cuenta.numCuenta}"></td>
+                    <td th:text="${cuenta.tipoCuenta}"></td>
+                    <td th:text="${cuenta.estadoCuenta}"></td>
+                    <td th:text="${cuenta.saldo}"></td>
+                    <td th:text="${cuenta.fechaUtimaTransaccion}"></td>
+                    <td th:text="${cuenta.fechaCreacion}"></td>
+                    <td th:text="${cuenta.numIdentificacion.numIdentificacion}"></td>
+                    <td>
+                        <a th:href="@{cuentas/{numCuenta}/edit(numCuenta=${cuenta.numCuenta})}">
+                            Editar
+                        </a>
+                        <a th:href="@{cuentas/{numCuenta}/delete(numCuenta=${cuenta.numCuenta})}"
+                            onclick="return confirm('¿Estás seguro de borrar este oficina?')">
+                            Borrar
+                        </a>
+                    </td>
+                </tr>
+            </th:block>
+
+        </table>
+        <div>
+            <a th:href="@{/cuentas/new}" class="btn btn-primary">Añadir cuenta</a>
+            <a th:href='@{/}' class="btn btn-primary">Volver Atrás</a>
+        </div>
+        <br/>
+
+    </div>
+</body>
+
+</html>

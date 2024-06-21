@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Crear Cuenta</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <br/>
+    <form th:action="@{/cuentas/new}" th:object="${cuenta}" method="post">
+        <div th:replace="~{fragments/cuentaForm :: cuentaForm(titulo='Crear Cuenta')}">
+        </div>
+    </form>
+</body>
+</html>

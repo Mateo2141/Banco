@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="75CF9771-9DBE-B2D7-A7F0-1ADDDB3D4631" name="empleados">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:03:01 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>41AB17F9-46C4-0720-631B-55F00AB0023F</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="tipo" id="6746CF8F-A960-390C-FBF1-73CD230FDADD">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:03:09 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4997ACE4-B471-832D-2FF2-5C55151E435E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="D6864733-FC8A-21D0-DEF8-2BD634EB484C">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-18 06:16:39 UTC</createdTime>
+<generatorID>B0AE1CD9-969F-8EB6-1CF9-9E4D3AE1A2B3</generatorID>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<referedAttribute>163A4B8C-4FC6-F1D6-9BFB-D14FF2A16254</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>256 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

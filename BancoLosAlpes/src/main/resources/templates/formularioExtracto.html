@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="icon" type="image/png" href="../static/images/logo.png" />
+    <title>Generar Extracto Bancario</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/navbar.css}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" th:href='@{/}'><img th:src="@{/images/logo.png}" width="70"></a>
+    </nav>
+    <div class="container">
+        <h2>Generar Extracto Bancario</h2>
+        <form th:action="@{/cuentas/extracto}" method="post">
+            <div class="form-group">
+                <label for="numCuenta">Número de Cuenta:</label>
+                <input type="text" class="form-control" id="numCuenta" name="numCuenta" required>
+            </div>
+            <div class="form-group">
+                <label for="mes">Mes (YYYY-MM):</label>
+                <input type="text" class="form-control" id="mes" name="mes" required pattern="\d{4}-\d{2}">
+            </div>
+            <button type="submit" class="btn btn-primary">Generar Extracto</button>
+        </form>
+    </div>
+</body>
+</html>

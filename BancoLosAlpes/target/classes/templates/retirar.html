@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Retirar Dinero</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <br />
+    <div class="container border border-2 w-25">
+        <h1 class="text-center">Retirar Dinero</h1>
+        <form th:action="@{'/cuentas/' + ${cuenta.numCuenta} + '/retirar'}" method="post">
+            <div class="form-group">
+                <label class="col-form-label" for="monto">Monto a retirar:</label>
+                <input class="form-control" type="number" id="monto" name="monto" required />
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Retirar" class="btn btn-primary" />
+                <a th:href="@{/cuentas}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+        <br />
+    </div>
+</body>
+</html>

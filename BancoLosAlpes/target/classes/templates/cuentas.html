@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="icon" type="image/png" href="../static/images/logo.png" />
+    <title>Banco de Los Andes</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/navbar.css}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" th:href='@{/}'><img th:src="@{/images/logo.png}" width="70"></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/clientes}">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/cuentas}">Cuentas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/empleados}">Empleados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/oficinas}">Oficinas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/operaciones}">Operaciones Bancarias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/cuentas/operaciones}">Operaciones Cuenta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/cuentas/extracto}">Generar Extracto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container w-25">
+        <div class="card border border-2 mx-auto">
+            <h5 class="card-header" role='button' id="headingOne">
+                <a href="#" class="collapsed d-block" data-toggle="collapse" data-target="#busqueda">
+                    Búsqueda avanzada
+                </a>
+            </h5>
+            <div id="busqueda" class="collapse">
+                <form th:action="@{/cuentas/buscar}" method="get">
+                    <label class="col-form-label">Tipo de Cuenta:</label>
+                    <select class="form-control" id="tipoCuenta" name="tipo">
+                        <option value="">Seleccione una opción</option>
+                        <option value="AHORRO" th:selected="${param.tipo == 'AHORRO'}">AHORRO</option>
+                        <option value="CORRIENTE" th:selected="${param.tipo == 'CORRIENTE'}">CORRIENTE</option>
+                    </select>
+
+                    <label class="col-form-label">Estado de Cuenta:</label>
+                    <select class="form-control" id="estadoCuenta" name="estado">
+                        <option value="">Seleccione una opción</option>
+                        <option value="ACTIVA" th:selected="${param.estado == 'ACTIVA'}">ACTIVA</option>
+                        <option value="CERRADA" th:selected="${param.estado == 'CERRADA'}">CERRADA</option>
+                        <option value="DESACTIVADA" th:selected="${param.estado == 'DESACTIVADA'}">DESACTIVADA</option>
+                    </select>
+
+                    <label class="col-form-label">Saldo Mínimo:</label>
+                    <input class="form-control" type="number" id="saldoMin" name="saldoMin" />
+
+                    <label class="col-form-label">Saldo Máximo:</label>
+                    <input class="form-control" type="number" id="saldoMax" name="saldoMax" />
+
+                    <label class="col-form-label">Fecha de Creación Desde:</label>
+                    <input class="form-control" type="date" id="fechaCreacionInicio" name="fechaCreacionInicio" />
+
+                    <label class="col-form-label">Fecha de Creación Hasta:</label>
+                    <input class="form-control" type="date" id="fechaCreacionFin" name="fechaCreacionFin" />
+
+                    <label class="col-form-label">Última Transacción Desde:</label>
+                    <input class="form-control" type="date" id="fechaUltimaTransaccionInicio" name="fechaUltimaTransaccionInicio" />
+
+                    <label class="col-form-label">Última Transacción Hasta:</label>
+                    <input class="form-control" type="date" id="fechaUltimaTransaccionFin" name="fechaUltimaTransaccionFin" />
+
+                    <label class="col-form-label">Cliente ID:</label>
+                    <input class="form-control" type="number" id="clienteId" name="clienteId" />
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-secondary">Buscar</button>
+                    </div>
+                    <br />
+                </form>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="text-center">
+        <h1>Lista de Cuentas</h1>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Número de Cuenta</th>
+                    <th>Tipo de Cuenta</th>
+                    <th>Estado de la Cuenta</th>
+                    <th>Saldo</th>
+                    <th>Última Transacción</th>
+                    <th>Fecha de Creación</th>
+                    <th>Cliente</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cuenta : ${cuentas}">
+                    <td th:text="${cuenta.numCuenta}"></td>
+                    <td th:text="${cuenta.tipo}"></td>
+                    <td th:text="${cuenta.estado}"></td>
+                    <td th:text="${cuenta.saldo}"></td>
+                    <td th:text="${#dates.format(cuenta.fechaUltimaTransaccion, 'yyyy-MM-dd')}"></td>
+                    <td th:text="${#dates.format(cuenta.fechaCreacion, 'yyyy-MM-dd')}"></td>
+                    <td th:text="${cuenta.cliente != null ? cuenta.cliente.numIdentificacion : 'N/A'}"></td>
+                    <td>
+                        <a th:href="@{'/cuentas/' + ${cuenta.numCuenta} + '/edit'}" class="btn btn-primary btn-sm">Editar</a>
+                        <a th:href="@{'/cuentas/' + ${cuenta.numCuenta} + '/delete'}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de borrar esta cuenta?')">Borrar</a>
+                        
+                        <!-- Consignar Form -->
+                        <a th:href="@{'/cuentas/' + ${cuenta.numCuenta} + '/consignar'}" style="display:inline;" class="btn btn-primary btn-sm">consigna</a>
+                        
+                        
+                        
+                        <!-- Retirar Form -->
+                        <a th:href="@{'/cuentas/' + ${cuenta.numCuenta} + '/retirar'}" style="display:inline;" class="btn btn-primary btn-sm">retirar</a>
+                        
+                        <!-- Transferir Form -->
+                        <form th:action="@{'/cuentas/' + ${cuenta.numCuenta} + '/transferir'}" method="post" style="display:inline;">
+                            <input type="hidden" name="cuentaDestino" value="123456" />
+                            <input type="hidden" name="monto" value="200" />
+                            <button type="submit" class="btn btn-info btn-sm">Transferir</button>
+                        </form>
+
+                        <!-- Generar Extracto Form -->
+                        <form th:action="@{'/cuentas/extracto'}" method="get" style="display:inline;">
+                            <input type="hidden" name="numCuenta" th:value="${cuenta.numCuenta}" />
+                            <button type="submit" class="btn btn-secondary btn-sm">Generar Extracto</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <a th:href="@{/cuentas/new}" class="btn btn-primary">Añadir Cuenta</a>
+            <a th:href='@{"/"}' class="btn btn-secondary">Volver Atrás</a>
+        </div>
+        <br/>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transferir</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <br/>
+    <form th:action="@{/api/cuentas/{cuentaOrigen}/transferir/{cuentaDestino}}" method="post">
+        <div th:replace="~{fragments/operacionCuentaForm :: operacionCuentaForm(titulo='Transferir')}">
+        </div>
+    </form>
+</body>
+</html>

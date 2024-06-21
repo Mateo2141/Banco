@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fragmento</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+    <br />
+    <div th:fragment="operacionCuentaForm(titulo)" class="container border border-2 w-25">
+        <h1 class="text-center" th:text="${titulo}"></h1>
+    
+        <form th:action="@{/operacionesCuenta/transferir}" method="post">
+            <label class="col-form-label">Id Operacion 1:</label>
+            <input class="form-control" type="number" id="idOperacion1" name="idOperacion1" required 
+                th:value="${operacioncuenta.id != null ? operacioncuenta.id: ''}" />
+    
+            <label class="col-form-label">Id Operacion 2:</label>
+            <input class="form-control" type="number" id="idOperacion2" name="idOperacion2" required 
+                th:value="${operacioncuenta.id != null ? operacioncuenta.id : ''}" />
+    
+            <label class="col-form-label">Id Cuenta 1:</label>
+            <input class="form-control" type="number" id="cuentaId1" name="cuentaId1" required 
+                th:value="${operacioncuenta.numCuenta != null ? operacioncuenta.numCuenta.numCuenta : ''}" />
+    
+            <label class="col-form-label">Id Cuenta 2:</label>
+            <input class="form-control" type="number" id="cuentaId2" name="cuentaId2" required 
+                th:value="${operacioncuenta.numCuenta != null ? operacioncuenta.numCuenta.numCuenta : ''}" />
+    
+            <label class="col-form-label">Monto:</label>
+                <input class="form-control" type="number" id="monto" name="monto" required 
+                th:value="${operacioncuenta.operacionBancaria != null ? operacioncuenta.operacionBancaria.monto : ''}" />
+                
+            <div class="text-center">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <a th:href="@{/operacionesCuenta}" class="btn btn-primary">Cancelar</a>
+            </div>
+        </form>
+        <br />
+    </div>
+    
+</body>
+
+</html>

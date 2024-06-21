@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Puede hacer" directorySegmentName="seg_0" id="DFE58FBC-1E00-A152-ACFF-22B7E2B00823">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 18:21:22 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<sourcePk>109A4AE5-75B1-3576-8070-7AF8CE9D5089</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>9DCBA530-9AFB-6421-885F-4671F7BB0432</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9FA7DEC3-F9E9-60FF-6737-8CD89FF27933</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

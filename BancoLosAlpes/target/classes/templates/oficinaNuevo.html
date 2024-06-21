@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Crear Oficina</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <br />
+    <form th:action="@{/oficinas/guardar}" method="post">
+        <div th:replace="~{fragments/oficinaForm :: oficinaForm(titulo='Crear Oficina', oficina=${oficina})}">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/png" href="../static/images/logo.png" />
+    <title>Banco de Los Andes</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/navbar.css}" />   
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" th:href='@{/}'><img th:src="@{/images/logo.png}" width="70"></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/api/clientes}">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/api/cuentas}">Cuentas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/api/empleados}">Empleados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/api/oficinas}">Oficinas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/api/operaciones}">Operaciones Bancarias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/api/cuentas/operaciones}">Operaciones Cuenta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/api/prestamos/operaciones}">Operaciones Préstamo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/api/prestamos}">Préstamos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/api/oficinas/puntosatencion}">Puntos Atención</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/api/usuarios}">Usuarios</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="text-center">
+        <h1>Lista de Operaciones Bancarias</h1>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Numero De Identificación</th>
+                    <th>Monto</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Ubicación Geográfica</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <th:block th:each="operacionbancaria : ${operacionesBancarias}">
+                <tr>
+                    <td th:text="${operacionbancaria.id}"></td>
+                    <td th:text="${operacionbancaria.monto}"></td>
+                    <td th:text="${operacionbancaria.fecha}"></td>
+                    <td th:text="${operacionbancaria.hora}"></td>
+                    <td th:text="${operacionbancaria.ubicacionGeografica}"></td>
+                    <td>
+                        <a th:href="@{/api/operaciones/{id}/edit(id=${operacionbancaria.id})}" class="btn btn-primary btn-sm">Editar</a>
+                        <a th:href="@{/api/operaciones/{id}/delete(id=${operacionbancaria.id})}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de borrar esta operación bancaria?')">Borrar</a>
+                    </td>
+                </tr>
+            </th:block>
+        </table>
+        <div>
+            <a th:href="@{/}" class="btn btn-primary">Volver Atrás</a>
+        </div>
+        <br/>
+    </div>
+</body>
+</html>

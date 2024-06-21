@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9DCBA530-9AFB-6421-885F-4671F7BB0432" name="PuntosAtencion">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:08:37 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ubicacionGeografica" id="8EA1A0AE-90AA-557D-63C6-9C6AAA38E2C5">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:10:25 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>256 CHAR</dataTypeSize>
+<ownDataTypeParameters>256 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="operacionesRealizadas" id="4FA70596-8649-2417-84D1-94759147BA55">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 17:10:42 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="3BD70B3A-15C1-C3BF-DFF8-5F4896612D7B">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-18 06:16:39 UTC</createdTime>
+<generatorID>25BE6B8E-9F56-DE4C-0BDC-C1B5AD68F0CC</generatorID>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<referedAttribute>163A4B8C-4FC6-F1D6-9BFB-D14FF2A16254</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>256 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipoPuntoDeAtencion" id="66603556-DF89-E277-FE81-C4BFB087BACD">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-18 06:23:12 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>C1D84A60-222B-88CC-C876-2DB0781F7932</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="109A4AE5-75B1-3576-8070-7AF8CE9D5089" name="PuntosAtencion PK">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-18 06:17:08 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<engineerTo>
+<item key="B64BB1B7-261C-6048-7380-9ADCDF3171C9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8EA1A0AE-90AA-557D-63C6-9C6AAA38E2C5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nuevo Punto de Atención</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <br />
+    <form th:action="@{/oficinas/{id}/puntosatencion/guardar(id=${oficinaId})}" method="post">
+        <div th:replace="fragments/puntosAtencionForm :: puntosAtencionForm(titulo='Nuevo Punto de Atención', puntoAtencion=${puntoAtencion})">
+        </div>
+    </form>
+</body>
+</html>

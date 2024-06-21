@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Usuario</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <br/>
+    <form th:action="@{/api/empleados}" method="post">
+        <div th:replace="~{fragments/empleadoForm :: empleadoForm(titulo='Crear Usuario')}">
+        </div>
+    </form>
+</body>
+</html>

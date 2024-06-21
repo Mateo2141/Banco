@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Punto atencion</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+
+</head>
+<body>
+    </br>
+    <form th:action="@{/puntosAtencion/new/save}" method="post">
+    <div th:replace="~{fragments/puntosAtencionForm :: puntoAtencionForm(titulo='Crear Punto atencion')}">
+    </div>
+    </form>
+</body>
+</html>

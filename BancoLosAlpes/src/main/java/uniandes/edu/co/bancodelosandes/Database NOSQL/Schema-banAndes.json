@@ -1,0 +1,69 @@
+{
+  "usuarios": [
+    {
+      "_id": "ObjectId",
+      "nombre": "String",
+      "contraseña": "String",
+      "clienteId": "ObjectId",  
+      "empleadoId": "ObjectId"  
+    }
+  ],
+  "clientes": [
+    {
+      "_id": "ObjectId",
+      "persona": "String",  
+      "cuentas": [
+        "ObjectId"  
+      ]
+    }
+  ],
+  "empleados": [
+    {
+      "_id": "ObjectId",
+      "tipo": "String",  
+      "oficinaId": "ObjectId"  
+    }
+  ],
+  "oficinas": [
+    {
+      "_id": "ObjectId",
+      "nombre": "String",
+      "numPuntosAtencion": "Integer",
+      "direccion": "String",
+      "horario": "Date",
+      "puntosAtencion": [
+        {
+          "_id": "ObjectId",
+          "ubicacionGeografica": "String",
+          "operacionesRealizadas": "Integer",
+          "tipo": "String"  
+        }
+      ]
+    }
+  ],
+  "cuentas": [
+    {
+      "_id": "ObjectId",
+      "numCuenta": "Integer",
+      "tipo": "String",  
+      "estado": "String",  
+      "saldo": "Float",
+      "fechaUltimaTransaccion": "Date",
+      "fechaCreacion": "Date",
+      "operaciones": [
+        "ObjectId"  
+      ]
+    }
+  ],
+  "operaciones_bancarias": [
+    {
+      "_id": "ObjectId",
+      "monto": "Float",
+      "fecha": "Date",
+      "hora": "Time",
+      "tipoOperacion": "String",  
+      "cuentaId": "ObjectId",  
+      "puntoAtencionId": "ObjectId"
+    }
+  ]
+}

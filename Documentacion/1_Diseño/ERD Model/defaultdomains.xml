@@ -1,0 +1,152 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<DomainFile class="oracle.dbtools.crest.model.design.DomainFileWrapper" fileName="defaultdomains">
+<domains>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="TipoPersona" id="05CFB9D0-A923-0495-9903-CB19205F37C4">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 00:39:37 UTC</createdTime>
+<ownerDesignName>System</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<dataTypeSize>8 CHAR</dataTypeSize>
+<fileName>defaultdomains</fileName>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<listOfValues>
+<valueDef value="juridica" description="persona juridica"/>
+<valueDef value="natural" description="persona natural"/>
+</listOfValues>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="EstadoPrestamo" id="1FF05DEA-0FE5-C389-CAA9-73757F41C1F8">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 00:52:53 UTC</createdTime>
+<ownerDesignName>System</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<dataTypeSize>24 CHAR</dataTypeSize>
+<fileName>defaultdomains</fileName>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<listOfValues>
+<valueDef value="aprobado" description="prestamo listo para desembolso"/>
+<valueDef value="pagado" description="prestamo saldado"/>
+<valueDef value="rechazado" description="solicitud no exitosa"/>
+<valueDef value="solicitado" description="prestamo en tramite"/>
+</listOfValues>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="EstadoCuenta" id="350EFEBB-AB82-D10E-FD0B-78C2B285759C">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 00:44:31 UTC</createdTime>
+<ownerDesignName>System</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<dataTypeSize>256 CHAR</dataTypeSize>
+<fileName>defaultdomains</fileName>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<listOfValues>
+<valueDef value="activa" description="cuenta ok"/>
+<valueDef value="cerrada" description="cuenta no disponible"/>
+<valueDef value="cuenta desactivada" description="cuenta deshabilitada"/>
+</listOfValues>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="TipoIdentificacion" id="4250B669-4973-60B5-8303-351E8C3B9378">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-12 23:49:44 UTC</createdTime>
+<ownerDesignName>System</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<dataTypeSize>2 CHAR</dataTypeSize>
+<fileName>defaultdomains</fileName>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<listOfValues>
+<valueDef value="CC" description="Cedula"/>
+<valueDef value="TI" description="Tarjeta Identidad"/>
+</listOfValues>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="TipoEmpleado" id="4997ACE4-B471-832D-2FF2-5C55151E435E">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 00:56:24 UTC</createdTime>
+<ownerDesignName>System</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<dataTypeSize>24 CHAR</dataTypeSize>
+<fileName>defaultdomains</fileName>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<listOfValues>
+<valueDef value="cajero" description="persona que distribuye dinero"/>
+<valueDef value="gerente_general" description="persona encargada de administrar el banco"/>
+<valueDef value="gerente_oficina" description="persona encargada de puntos"/>
+</listOfValues>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="OperacionesPrestamo" id="953EE477-A02B-3FB4-0927-7EA2CDD99A47">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 00:49:34 UTC</createdTime>
+<ownerDesignName>System</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<dataTypeSize>256 CHAR</dataTypeSize>
+<fileName>defaultdomains</fileName>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<listOfValues>
+<valueDef value="pago_extraordinario" description="pago fuera de tiempo"/>
+<valueDef value="pago_ordinario" description="pago dentro del tiempo de pago"/>
+</listOfValues>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="TipoPuntoAtencion" id="C1D84A60-222B-88CC-C876-2DB0781F7932">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 00:54:48 UTC</createdTime>
+<ownerDesignName>System</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<dataTypeSize>24 CHAR</dataTypeSize>
+<fileName>defaultdomains</fileName>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<listOfValues>
+<valueDef value="AppWeb" description="operaciones online"/>
+<valueDef value="cajero_automatico" description="distribucion de dinero"/>
+</listOfValues>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="OperacionesCuenta" id="C54D0684-A616-039D-60F1-E64C6750CE19">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 00:46:01 UTC</createdTime>
+<ownerDesignName>System</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<dataTypeSize>256 CHAR</dataTypeSize>
+<fileName>defaultdomains</fileName>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<listOfValues>
+<valueDef value="cerrar" description="cuenta no disponible"/>
+<valueDef value="consignacion" description="ingreso de dinero"/>
+<valueDef value="crear" description="nueva cuenta"/>
+<valueDef value="retiro" description="resta de dinero"/>
+<valueDef value="transferencia" description="envio de dinero"/>
+</listOfValues>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="TipoCuenta" id="C559475B-0B12-7A63-0690-BA123483EB51">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 00:41:24 UTC</createdTime>
+<ownerDesignName>System</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<dataTypeSize>256 CHAR</dataTypeSize>
+<fileName>defaultdomains</fileName>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<listOfValues>
+<valueDef value="ahorro" description="cuenta de ahorro"/>
+<valueDef value="corriente" description="cuenta corriente"/>
+</listOfValues>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="TipoPrestamo" id="C9519B5E-2BAE-B6CA-92AC-87F23306E2F9">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-13 00:51:00 UTC</createdTime>
+<ownerDesignName>System</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<dataTypeSize>256 CHAR</dataTypeSize>
+<fileName>defaultdomains</fileName>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<listOfValues>
+<valueDef value="automovil" description="prestamo para adquirir un nuevo vehiculo"/>
+<valueDef value="estudio" description="prestamo para pago de la preparación academica"/>
+<valueDef value="libre_inversion" description="prestamo abierto a cualquier inversion del usuario"/>
+<valueDef value="vivienda" description="prestamo para nuevo inmueble"/>
+</listOfValues>
+</Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="Unknown" id="DOM3000004">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-01-25 14:06:57 UTC</createdTime>
+<ownerDesignName>System</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<fileName>defaultdomains</fileName>
+<logicalDatatype>LOGDT017</logicalDatatype>
+</Domain>
+</domains>
+</DomainFile>

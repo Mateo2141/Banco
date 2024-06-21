@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fragmento</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+
+</head>
+
+<body>
+
+    </br>
+    <div th:fragment="prestamoForm(titulo)" class="container border border-2 w-25">
+        <h1 class="text-center" th:text="${titulo}"></h1>
+    
+    <form>
+        <label class="col-form-label">id:</label>
+        <input class="form-control" type="number" id="id" name="id" required th:value="${prestamo.id}" />
+        
+        <label class="col-form-label">tipoPrestamo:</label>
+        <select class="form-control" id="tipoPrestamo" name="tipoPrestamo" required>
+            <option value="VIVIENDA" th:selected="${prestamo.tipoPrestamo eq 'VIVIENDA'}">VIVIENDA</option>
+            <option value="ESTUDIO" th:selected="${prestamo.tipoPrestamo eq 'ESTUDIO'}">ESTUDIO</option>
+            <option value="AUTOMOVIL" th:selected="${prestamo.tipoPrestamo eq 'AUTOMOVIL'}">AUTOMOVIL</option>
+            <option value="LIBRE_INVERSION" th:selected="${prestamo.tipoPrestamo eq 'LIBRE_INVERSION'}">LIBRE_INVERSION</option>
+        </select>
+
+        <label class="col-form-label" for="estadoPrestamo">estadoPrestamo:</label>
+        <select class="form-control" id="estadoPrestamo" name="estadoPrestamo" required>
+            <option value="APROVADO" th:selected="${prestamo.estadoPrestamo eq 'APROVADO'}">APROVADO</option>
+            <option value="RECHAZADO" th:selected="${prestamo.estadoPrestamo eq 'RECHAZADO'}">RECHAZADO</option>
+            <option value="SOLICITADO" th:selected="${prestamo.estadoPrestamo eq 'SOLICITADO'}">SOLICITADO</option>
+            <option value="PAGADO" th:selected="${prestamo.estadoPrestamo eq 'PAGADO'}">PAGADO</option>
+        </select>
+
+        <label class="col-form-label">monto:</label>
+        <input class="form-control" type="number" id="monto" name="monto" required th:value="${prestamo.monto}" />
+        
+
+        <label class="col-form-label">interes:</label>
+        <input class="form-control" type="number" id="interes" name="interes" required th:value="${prestamo.interes}" />
+        
+        <label class="col-form-label">numCuotas:</label>
+        <input class="form-control" type="number" id="numCuotas" name="numCuotas" required th:value="${prestamo.numCuotas}" />
+        
+
+        <label class="col-form-label">diaPago:</label>
+        <input class="form-control" type="number" id="diaPago" name="diaPago" required th:value="${prestamo.diaPago}" />
+        
+        <label class="col-form-label">valorCuota:</label>
+        <input class="form-control" type="number" id="valorCuota" name="valorCuota" required th:value="${prestamo.valorCuota}" />
+
+
+        <div class="text-center">
+            <input type="submit" value="Guardar" class="btn btn-primary">
+            <a th:href="@{/prestamos}" class="btn btn-primary">Cancelar</a>
+        </div>
+    </form>
+
+    </br>
+</div>
+
+</body>
+
+</html>

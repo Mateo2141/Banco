@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+head>
+    <title>Editar Punto de Atención</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+    <br />
+    <form th:action="@{'/oficinas/' + ${oficinaId} + '/puntosatencion/' + ${puntoAtencion.id} + '/guardar'}" th:object="${puntoAtencion}" method="post">
+        <div th:replace="~{fragments/puntoAtencionForm :: puntoAtencionForm(titulo='Editar Punto de Atención', oficinaId=${oficinaId}, puntoAtencion=${puntoAtencion})}">
+        </div>
+    </form>
+</body>
+
+</html>

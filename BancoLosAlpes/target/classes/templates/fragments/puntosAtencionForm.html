@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fragmento Punto de Atención</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div th:fragment="puntosAtencionForm(titulo, puntoAtencion)" class="container border border-2 w-50">
+        <h1 class="text-center" th:text="${titulo}"></h1>
+        <form th:object="${puntoAtencion}" method="post">
+            <label class="col-form-label">Ubicación Geográfica:</label>
+            <input class="form-control" type="text" id="ubicacionGeografica" name="ubicacionGeografica" required th:field="*{ubicacionGeografica}" />
+
+            <label class="col-form-label">Operaciones Realizadas:</label>
+            <input class="form-control" type="text" id="operacionesRealizadas" name="operacionesRealizadas" required th:field="*{operacionesRealizadas}" />
+
+            <label class="col-form-label">Tipo:</label>
+            <select class="form-control" id="tipo" name="tipo" required th:field="*{tipo}">
+                <option value="CAJERO_AUTOMATICO">CAJERO_AUTOMATICO</option>
+                <option value="APPWEB">APPWEB</option>
+            </select>
+
+            <div class="text-center">
+                <input type="submit" value="Guardar" class="btn btn-primary">
+                <a th:href="@{/oficinas/{oficinaId}(oficinaId=${oficinaId})}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

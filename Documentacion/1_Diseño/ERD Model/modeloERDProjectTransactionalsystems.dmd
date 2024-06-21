@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="modeloERDProjectTransactionalsystems" id="E11A3AB0-892C-1F6A-8D93-F4985DF47960" version="3.5">
+<createdBy>Lenovo</createdBy>
+<createdTime>2024-02-12 23:43:39 UTC</createdTime>
+<ownerDesignName>modeloERDProjectTransactionalsystems</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>E11A3AB0-892C-1F6A-8D93-F4985DF47960</designId>
+</OSDM_Design>

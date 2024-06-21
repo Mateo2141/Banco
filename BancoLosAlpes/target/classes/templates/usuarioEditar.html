@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar usuario</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <br/>
+    <form th:action="@{/usuarios/{numIdentificacion}/edit/save(numIdentificacion=${usuario.numIdentificacion})}" method="post">
+        <div th:replace="fragments/usuarioForm :: usuarioForm(titulo='Editar usuario')">
+        </div>
+    </form>
+</body>
+</html>

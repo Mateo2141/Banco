@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/png" href="../static/images/logo.png" />
+    <title>Banco de Los Andes</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/navbar.css}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" th:href="@{/}"><img th:src="@{/images/logo.png}" width="70" /></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" th:href="@{/api/clientes}">Clientes</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/api/cuentas}">Cuentas</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/api/empleados}">Empleados</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/api/oficinas}">Oficinas</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/api/operaciones}">Operaciones Bancarias</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/api/cuentas/operaciones}">Operaciones Cuenta</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/api/prestamos/operaciones}">Operaciones Préstamo</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/api/prestamos}">Préstamos</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/api/oficinas/puntosatencion}">Puntos Atención</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/api/usuarios}">Usuarios</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container w-25">
+        <div class="card border border-2 mx-auto">
+            <h5 class="card-header" role="button" id="headingOne">
+                <a href="#" class="collapsed d-block" data-toggle="collapse" data-target="#busqueda">
+                    Buscar Cuenta (Información Últimos 30 días)
+                </a>
+            </h5>
+            <div id="busqueda" class="collapse">
+                <form th:action="@{/api/cuentas/operaciones}" method="get">
+                    <label class="col-form-label">Número de cuenta:</label>
+                    <input class="form-control" type="text" id="idCuenta" name="idCuenta" />
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-secondary">Buscar</button>
+                    </div>
+                    <br />
+                </form>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="text-center">
+        <h1>Lista de Operaciones de Cuenta</h1>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Identificación Operación</th>
+                    <th>Tipo de Operación</th>
+                    <th>Número de Cuenta</th>
+                    <th>Operación Bancaria</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <th:block th:each="operacioncuenta : ${operacionesCuenta}">
+                <tr>
+                    <td th:text="${operacioncuenta.id}"></td>
+                    <td th:text="${operacioncuenta.tipoOperacionCuenta}"></td>
+                    <td th:text="${operacioncuenta.numCuenta.numCuenta}"></td>
+                    <td th:text="${operacioncuenta.operacionBancaria.id}"></td>
+                    <td>
+                        <a th:href="@{/api/cuentas/operaciones/{id}/edit(id=${operacioncuenta.id})}" class="btn btn-primary btn-sm">Editar</a>
+                        <a th:href="@{/api/cuentas/operaciones/{id}/delete(id=${operacioncuenta.id})}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de borrar esta operación de cuenta?')">Borrar</a>
+                    </td>
+                </tr>
+            </th:block>
+        </table>
+        <div>
+            <a th:href="@{/api/cuentas/operaciones/new}" class="btn btn-primary">Añadir operación cuenta</a>
+            <a th:href="@{/api/cuentas/operaciones/new}" class="btn btn-primary">Retirar</a>
+            <a th:href="@{/api/cuentas/operaciones/new}" class="btn btn-primary">Consignar</a>
+            <a th:href="@{/api/cuentas/operaciones/transfer}" class="btn btn-primary">Transferir</a>
+            <a th:href="@{/' class="btn btn-primary">Volver Atrás</a>
+        </div>
+        <br />
+    </div>
+
+    <form th:action="@{/api/cuentas/extracto}" method="get">
+        <div class="form-group">
+            <label for="numeroCuenta">Número de Cuenta</label>
+            <input type="text" id="numeroCuenta" name="numeroCuenta" class="form-control" placeholder="Ingresa el número de cuenta" required />
+        </div>
+        <div class="form-group">
+            <label for="mes">Mes</label>
+            <select id="mes" name="mes" class="form-control" required>
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Generar Extracto</button>
+    </form>
+</body>
+</html>

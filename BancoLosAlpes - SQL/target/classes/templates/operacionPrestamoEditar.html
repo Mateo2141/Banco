@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar operacion</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+
+</head>
+<body>
+</br>
+<form th:action="@{'/operacionesPrestamo/' + ${id} + '/edit/save'}" th:object="${operacionprestamo}" method="post">
+    <div th:replace="~{fragments/operacionPrestamoForm :: operacionPrestamoForm(titulo='Editar operacion', operacionprestamo=${operacionprestamo})}">
+    </div>
+</form>
+
+</body>
+</html>

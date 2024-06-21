@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/png" href="../static/images/logo.png" />
+    <title>Banco de Los Andes</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/navbar.css}" />   
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" th:href='@{/}'><img th:src="@{/images/logo.png}" width="70"></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/clientes}">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/cuentas}">Cuentas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/empleados}">Empleados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/oficinas}">Oficinas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/operacionesBancarias}">Operaciones Bancarias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/operacionesCuenta}">Operaciones Cuenta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/operacionesPrestamo}">Operaciones Prestamo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/prestamos}">Prestamos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/puntosAtencion}">Puntos Atencion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="text-center">
+        <h1>Lista de prestamos</h1>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Identificacion</th>
+                    <th>Tipo De Préstamo</th>
+                    <th>Estado del préstamo</th>
+                    <th>Monto</th>
+                    <th>Interés</th>
+                    <th>Numero de Cuotas</th>
+                    <th>Dia de pago</th>
+                    <th>Valor de la Cuota</th>
+
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <th:block th:each="prestamo : ${prestamos}">
+                <tr>
+                    <td th:text="${prestamo.id}"></td>
+                    <td th:text="${prestamo.tipoPrestamo}"></td>
+                    <td th:text="${prestamo.estadoPrestamo}"></td>
+                    <td th:text="${prestamo.monto}"></td>
+                    <td th:text="${prestamo.interes}"></td>
+                    <td th:text="${prestamo.numCuotas}"></td>
+                    <td th:text="${prestamo.diaPago}"></td>
+                    <td th:text="${prestamo.valorCuota}"></td>
+                    <td>
+                        <a th:href="@{prestamos/{id}/edit(id=${prestamo.id})}">
+                            Editar
+                        </a>
+                        <a th:href="@{prestamos/{id}/delete(id=${prestamo.id})}"
+                            onclick="return confirm('¿Estás seguro de borrar este prestamo?')">
+                            Borrar
+                        </a>
+                    </td>
+                </tr>
+            </th:block>
+
+        </table>
+        <div>
+            <a th:href="@{/prestamos/new}" class="btn btn-primary">Añadir prestamo</a>
+            <a th:href='@{/}' class="btn btn-primary">Volver Atrás</a>
+        </div>
+        <br/>
+
+    </div>
+</body>
+
+</html>

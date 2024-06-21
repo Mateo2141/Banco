@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fragmento</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <br />
+    <div th:fragment="cuentaForm(titulo)" class="container border border-2 w-25">
+        <h1 class="text-center" th:text="${titulo}"></h1>
+
+        <form th:action="@{/cuentas/new}" th:object="${cuenta}" method="post">
+            <div class="form-group">
+                <label class="col-form-label" for="numCuenta">Número de Cuenta:</label>
+                <input class="form-control" type="text" id="numCuenta" name="numCuenta" required th:field="*{numCuenta}" />
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label" for="numCuenta">Número de Identificacion del clientes:</label>
+                <input class="form-control" type="text" id="id_cliente" name="cliente.numIdentificacion" required th:field="*{cliente.numIdentificacion}" />
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Tipo de Cuenta:</label>
+                <select class="form-control" id="tipoCuenta" name="tipo" required th:field="*{tipo}">
+                    <option value="AHORRO" th:selected="${cuenta.tipo == T(uniandes.edu.co.bancodelosandes.modelo.TipoCuenta).AHORRO}">AHORRO</option>
+                    <option value="CORRIENTE" th:selected="${cuenta.tipo == T(uniandes.edu.co.bancodelosandes.modelo.TipoCuenta).CORRIENTE}">CORRIENTE</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Estado de la Cuenta:</label>
+                <select class="form-control" id="estadoCuenta" name="estado" required th:field="*{estado}">
+                    <option value="ACTIVA" th:selected="${cuenta.estado == T(uniandes.edu.co.bancodelosandes.modelo.EstadoCuenta).ACTIVA}">ACTIVA</option>
+                    <option value="CERRADA" th:selected="${cuenta.estado == T(uniandes.edu.co.bancodelosandes.modelo.EstadoCuenta).CERRADA}">CERRADA</option>
+                    <option value="DESACTIVADA" th:selected="${cuenta.estado == T(uniandes.edu.co.bancodelosandes.modelo.EstadoCuenta).DESACTIVADA}">DESACTIVADA</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Saldo:</label>
+                <input class="form-control" type="number" id="saldo" name="saldo" required th:field="*{saldo}" />
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Fecha de Última Transacción:</label>
+                <input class="form-control" type="date" id="fechaUltimaTransaccion" name="fechaUltimaTransaccion" required th:field="*{fechaUltimaTransaccion}" />
+            </div>
+
+            <div class="form-group">
+                <label class="col-form-label">Fecha de Creación:</label>
+                <input class="form-control" type="date" id="fechaCreacion" name="fechaCreacion" required th:field="*{fechaCreacion}" />
+            </div>
+
+            <div class="text-center">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <a th:href="@{/cuentas}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+        <br />
+    </div>
+</body>
+</html>
